@@ -1,0 +1,27 @@
+<%- include('includes/head.ejs') %>
+
+
+
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text"  id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li>Wake up at 4am</li>
+  <li class="checked">Hit the gym</li>
+  <li>Set off for work at 6am</li>
+  <li>Meet executives</li>
+  <li>Work on records</li>
+  <li>Exit office</li>
+  <li>Go to the movies</li>
+</ul>
+
+
+<script src="js/myscript.js"></script>
+
+
+
+<%- include('includes/foot.ejs') %>
