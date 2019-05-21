@@ -9,6 +9,9 @@ todo.set('view engine','ejs');
 todo.use(bodyparser.urlencoded({extended: false}));
 
 todo.use(express.static(path.join(__dirname, 'public')));
+
+
+todo.use(bodyparser.json());
 todo.use(myapp);
 
 todo.listen(7000);

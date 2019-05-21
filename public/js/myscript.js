@@ -50,11 +50,28 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
+
+
+
+//function to send data to server using ajax
+function caller(name){
+    var data = {};
+					data.title = "task";
+					data.message = name;
+					
+					$.ajax({
+						type: 'POST',
+						data: JSON.stringify(data),
+				        contentType: 'application/json',
+                        url: '/list',						
+                        success: function(data) {
+                        }
+                    });
+}
+
 //filter for completed and uncompleted tasks with checkboxes
 $(document).ready(function(){
-    $(".addBtn").click(function(){
-        newElement();
-    })
+   
 $("#comcheck").click(function(){
     if ($(this).prop("checked")){
         document.getElementById("ucheck").disabled = true;
@@ -105,6 +122,7 @@ function newElement() {
     alert("You must write something!");
   } else {
     document.getElementById("myUL").appendChild(li);
+    caller(inputValue);
     setTimeout(function(){
         alert("Todo item added successfuly!");
     },300);
@@ -131,10 +149,15 @@ function newElement() {
 
 
 
+
+
 //add new element to list on press enter from the keyboard
 var press = document.getElementById("myInput");
 press.addEventListener("keydown",function(e){
     if(e.keyCode == "13"){
+      
         newElement();
+        
+       
     }
 })
