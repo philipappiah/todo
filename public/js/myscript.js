@@ -56,18 +56,18 @@ list.addEventListener('click', function(ev) {
 //function to send data to server using ajax
 function caller(name){
     var data = {};
-					data.title = "task";
-					data.message = name;
+    data.title = "task";
+    data.message = name;
 					
-					$.ajax({
-						type: 'POST',
-						data: JSON.stringify(data),
-				        contentType: 'application/json',
-                        url: '/list',						
-                        success: function(data) {
-                        }
-                    });
-}
+     $.ajax({
+	     type: 'POST',
+	     data: JSON.stringify(data),
+	     contentType: 'application/json',
+             url: '/list',						
+             success: function(data) {
+                }
+              });
+ }
 
 //filter for completed and uncompleted tasks with checkboxes
 $(document).ready(function(){
