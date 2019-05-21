@@ -5,6 +5,7 @@ const router = express.Router();
 
 
 router.get('/',myapp.getdo);
+router.post('/list',myapp.postdata);
 
 
 

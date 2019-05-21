@@ -6,7 +6,7 @@ const myapp = require('./routes/myroute');
 todo.set('views','views');
 todo.set('view engine','ejs');
 
-todo.use(bodyparser.urlencoded({extended:false}));
+todo.use(bodyparser.urlencoded({extended: false}));
 
 todo.use(express.static(path.join(__dirname, 'public')));
 todo.use(myapp);
